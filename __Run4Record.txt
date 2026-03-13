@@ -1,0 +1,22 @@
+Default:
+\logs\2026-03-05\04-06-37\checkpoints\epoch=80-step=9720.ckpt
+\logs\2026-03-05\05-05-52\emg2qwerty.log
+
+
+Best LSTM (RNN):
+- Width (96)
+\logs\2026-03-11\22-27-47\epoch=127-step=15360.ckpt
+
+- Depth (depth = 5)
+\logs\2026-03-11\23-44-58\checkpoints\epoch=90-step=10920.ckpt
+
+
+
+ToReport
+Default:
+C:\\Users\\ongk2\\Documents\\UCLA\\ECE247_Python_Winter2026\\FinalProject\\emg2qwerty\\logs\\2026-03-12\\12-56-28/checkpoints\\epoch=113-step=13680.ckpt
+
+
+RNN:
+c:\\Users\\ongk2\\Documents\\UCLA\\ECE247_Python_Winter2026\\FinalProject\\emg2qwerty\\logs\\2026-03-12\\14-19-50/checkpoints\\epoch=95-step=11520.ckpt
+

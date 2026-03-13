@@ -278,3 +278,56 @@ class TDSConvEncoder(nn.Module):
 
     def forward(self, inputs: torch.Tensor) -> torch.Tensor:
         return self.tds_conv_blocks(inputs)  # (T, N, num_features)
+
+class myLSTM_LayerBlock(nn.Module):
+    def __init__(self,
+                 num_features,
+                 hidden_size : int = 96,
+                 num_layers : int = 1,
+                 batch_first : bool = False,
+                 dropout : float = 0.0,
+                 bidirectional : bool = True,
+                 ) -> None:
+        super().__init__()
+        self.hidden_size = hidden_size,
+        self.num_layers = num_layers,
+        self.batch_first = batch_first,
+        self.bidirectional = bidirectional
+
+        self.rnnLSTM = nn.LSTM(
+            input_size=num_features,
+            num_layers=num_layers,
+            hidden_size=hidden_size,
+            batch_first=batch_first,
+            dropout=dropout,
+            bidirectional=bidirectional,
+        )
+        self.linear = nn.Linear(hidden_size * (2 if bidirectional else 1), num_features)
+        self.layer_norm = nn.LayerNorm(num_features)
+
+        
+    def forward(self, inputs: torch.Tensor) -> torch.Tensor:
+        x,_ = self.rnnLSTM(inputs)
+        x = self.linear(x)
+        return self.layer_norm(x) # -> (T,N,num_features)
+
+class myDropOut(nn.Module):
+    """Randomly zeroes some of the elements of the input tensor with probability, prob.
+    Output are scaled by a factor of 1/(1-prob) during training.
+
+    Args:
+        prob (float):  probability of an element to be zeroed
+        inplace (bool): If set to True, will do this operation in-place. Default: False
+    """
+    def __init__(self, prob: float) -> None:
+        super().__init__()
+        self.p = prob
+        self.inplace = False
+
+        self.dropout = nn.Dropout(
+            p = prob,
+            inplace=False
+        )
+
+    def forward(self, inputs: torch.Tensor) -> torch.Tensor:
+        return self.dropout(inputs)
