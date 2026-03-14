@@ -1,14 +1,14 @@
 # C147/247 Final Project
 ### Winter 2026 
 
-This course project is built upon the emg2qwerty work from Meta. The first section of this README provides some guidance for working with the repo and contains a running list of FAQs. **Note that the rest of the README is from the original repo and we encourage you to take a look at their work.**
-
 ## Personnel Run
 _Last updated 3/13/2026
 - ```Colab_setup.py``` + ```CNN_setup.py``` + ```RCNN_setup.ipynb``` + ```RNN_setup.ipynb``` - Testing default, CNN, LSTM, and CNN + LSTM, respectively.
 - Set module ```tds_conv_ctc.yaml``` for best CNN run
 - Set module ```tds_lstm_ctc.yaml``` for best LSTM run
 - Set module ```tds_conv_lstm_ctc.yaml``` for best CNN + LSTM run
+
+This course project is built upon the emg2qwerty work from Meta. The first section of this README provides some guidance for working with the repo and contains a running list of FAQs. **Note that the rest of the README is from the original repo and we encourage you to take a look at their work.**
 
 ## Guiding Tips + FAQs
 _Last updated 2/13/2025_
