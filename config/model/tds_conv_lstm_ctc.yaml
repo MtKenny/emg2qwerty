@@ -4,13 +4,13 @@ module:
   in_features: 528  # freq * channels = (n_fft // 2 + 1) * 16
   mlp_features: [384]
   block_channels: [24, 24, 24, 24]
-  kernel_width: 32  # Total temporal receptive field of 125 samples given 4 layers
-  dropout1: 0.0
-  hidden_size: 96 # Number of lstm block per layer
-  num_layers: 3   # Number of lstm layers'
+  kernel_width: 32
+  dropout1: 0.0    # Probability % drop layer between CNN and LSTM. Set to zero for no dropout layer
+  hidden_size: 192 # Number of lstm block per layer
+  num_layers: 4   # Number of lstm layers'
   batch_first: False
   bidirectional: True
-  dropout2: 0.0      # Probability % drop layer after lstm. Set to zero for no dropout layer
+  dropout2: 0.05      # Probability % drop layer after lstm. Set to zero for no dropout layer
 
 datamodule:
   _target_: emg2qwerty.lightning.WindowedEMGDataModule

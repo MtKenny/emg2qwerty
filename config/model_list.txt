@@ -1,0 +1,30 @@
+Model naming convention for notebook
+
+CNN Model:
+tds_conv_ctc.yaml - Best CER (kernel 48, drop 0p0)
+tds_conv_kenrel_8_drop_0p0.yaml
+tds_conv_kenrel_16_drop_0p0.yaml
+tds_conv_kenrel_32_drop_0p0.yaml
+tds_conv_kenrel_32_drop_0p5.yaml
+tds_conv_kenrel_48_drop_0p0.yaml
+
+
+LSTM Model:
+tds_lstm_ctc.yaml - Best CER (hidden size 192, num layer 4, drop 0p05
+tds_lstm_hidSz_48_num_5_drop_0p0_ctc.yaml
+tds_lstm_hidSz_96_num_1_drop_0p1_ctc.yaml
+tds_lstm_hidSz_96_num_3_drop_0p0_ctc.yaml
+tds_lstm_hidSz_96_num_3_drop_0p1_ctc.yaml
+tds_lstm_hidSz_96_num_3_drop_0p2_ctc.yaml
+tds_lstm_hidSz_96_num_4_drop_0p2_ctc.yaml
+tds_lstm_hidSz_96_num_4_drop_0p4_ctc.yaml
+tds_lstm_hidSz_96_num_8_drop_0p1_ctc.yaml
+tds_lstm_hidSz_192_num_4_drop_0p05_ctc.yaml
+tds_lstm_hidSz_384_num_4_drop_0p1_ctc.yaml
+
+CNN + LSTM Model:
+tds_conv_lstm_ctc.yaml - Best CER 
+tds_conv_lstm_drop1_0p0_hidSz_96_num_3_drop2_0p1_ctc.yaml
+tds_conv_lstm_drop1_0p0_hidSz_96_num_4_drop2_0p05_ctc.yaml
+tds_conv_lstm_drop1_0p05_hidSz_96_num_4_drop2_0p05_ctc.yaml
+tds_conv_lstm_drop1_0p0_hidSz_192_num_4_drop2_0p05_ctc.yaml
